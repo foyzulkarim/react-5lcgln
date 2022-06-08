@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "react-dom": "18.1.0",
+    "@babel/core": "7.18.2",
     "@emotion/react": "11.9.0",
     "@emotion/styled": "11.8.1",
     "@mui/icons-material": "5.8.3",
+    "@mui/material": "5.8.3",
+    "@types/react": "18.0.12",
     "react": "18.1.0",
-    "@mui/material": "5.8.3"
+    "react-dom": "18.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
