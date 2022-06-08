@@ -1,0 +1,22 @@
+{
+  "name": "pprgfg--run",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react-dom": "18.1.0",
+    "@emotion/react": "11.9.0",
+    "@emotion/styled": "11.8.1",
+    "@mui/icons-material": "5.8.3",
+    "react": "18.1.0",
+    "@mui/material": "5.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  }
+}
