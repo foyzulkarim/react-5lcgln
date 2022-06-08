@@ -24,27 +24,20 @@ import Divider from '@mui/material/Divider';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 export default function RecipeReviewCard() {
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  const data = [
+    { name: 'Page A', uv: 400, pv: 2400, amt: 2400 },
+    { name: 'Page B', uv: 300, pv: 4567, amt: 1398 },
+    { name: 'Page C', uv: 280, pv: 1398, amt: 9800 },
+    { name: 'Page D', uv: 200, pv: 9800, amt: 6800 },
+    { name: 'Page E', uv: 278, pv: 9800, amt: 6800 },
+    { name: 'Page F', uv: 189, pv: 9800, amt: 6800 },
+  ];
 
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <Card sx={{ maxWidth: 600 }}>
       <CardHeader
         action={
           <Button
@@ -99,12 +92,14 @@ export default function RecipeReviewCard() {
           mussels, if you like.
         </Typography>
       </CardContent>
-      <CardMedia
-        component="img"
-        height="194"
-        image="https://mui.com/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      />
+      <CardContent>
+        <LineChart width={500} height={150} data={data}>
+          <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+          <CartesianGrid stroke="#ccc" />
+          <XAxis dataKey="name" />
+          <YAxis />
+        </LineChart>
+      </CardContent>
       <CardContent>
         <AvatarGroup>
           <Avatar alt="Remy Sharp" src="https://mui.com/static/images/avatar/1.jpg" />
@@ -112,8 +107,8 @@ export default function RecipeReviewCard() {
           <Avatar alt="Agnes Walker" src="https://mui.com/static/images/avatar/4.jpg" />
           <Avatar alt="Trevor Henderson" src="https://mui.com/static/images/avatar/5.jpg" />
           <Typography variant="subtitle">Hayden and 23 others joined your program today</Typography>
-        </AvatarGroup>        
-      </CardContent>      
+        </AvatarGroup>
+      </CardContent>
     </Card>
   );
 }
