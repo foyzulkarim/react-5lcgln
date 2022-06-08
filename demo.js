@@ -22,6 +22,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -77,11 +78,16 @@ export default function RecipeReviewCard() {
             </Stack>
           </Grid>
           <Grid item xs={1}>
-            <Typography variant="body2" color="text.secondary">
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests. Add 1 cup of frozen peas along
-              with the mussels, if you like.
-            </Typography>
+            <Stack direction="row" spacing={1}>
+              <CheckCircleIcon />
+              <Typography variant="body2" color="text.secondary">
+                This impressive paella is a perfect party dish.
+                <Typography>
+                  Manage requests <ChevronRightIcon />
+                </Typography>
+                <Typography>Learn more</Typography>
+              </Typography>
+            </Stack>
           </Grid>
         </Grid>
       </CardContent>
